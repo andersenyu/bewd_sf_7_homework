@@ -1,0 +1,14 @@
+<center>
+<p style="color: #34495e; font-size: 40px;">Artists</p>
+
+<table>
+<% @record_label.artists.each do |artist| %>
+	<tr>
+		<td style="color: #2980b9; padding-right: 25px; font-size: 20px;"><%= artist.name %></td>
+		<td style="color: #2980b9; padding-right: 25px; font-size: 20px;"><%= image_tag(artist.pic_url) %></td>
+		<td style="color: #2980b9; padding-right: 25px; font-size: 20px;"><%= @record_label.name %></td>
+	</tr>
+	<br>
+<% end %>
+</table>
+</center>
