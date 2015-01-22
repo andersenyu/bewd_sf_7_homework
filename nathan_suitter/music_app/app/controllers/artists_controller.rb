@@ -49,7 +49,7 @@ class ArtistsController < ApplicationController
 
   # #declares what can be written & read 
   def artists_params
-    params.require(:artist).permit(:name, :pic_url, :year_released, :about, :record_label_id)
+    params.require(:artist).permit(:name, :pic_url, :year_released, :about, :record_label_id, :genre_id)
   end
 
   def get_artist
