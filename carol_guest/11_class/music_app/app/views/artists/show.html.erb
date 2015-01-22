@@ -5,6 +5,9 @@
 <h1><%=@artist.name%> <%= link_to "Edit", edit_artist_path(@artist), :class => 'btn btn-lg btn-default' %>
 <%= link_to "Back to artists", artists_path, :class => 'btn btn-lg btn-primary' %>
 </h1>
+<p><%= @artist.record_label.try(:name) %>
+<%= @artist.genre.try(:name) %></p>
+
 <%= image_tag(@artist.pic_url) %>
 
 
@@ -19,7 +22,6 @@
 <tr class = "small">
 <th>Name</th>
 <th>Artist</th>
-<th>File Location</th>
 <th>Rating</th>
 <th>Actions</th>
 </tr>
@@ -27,13 +29,9 @@
 
 <% @artist.tracks.each do |track| %>
 <tr class = "small">
-<td> <%= track.name %> </td>
+<td> <%= link_to "#{track.name}", track.location, :target=>"_blank" unless track.location.nil?%> </td>
 <td> <%= track.artist.name if track.artist%> </td>
 <!-- I couldn't figure out how to get it to hide links for tracks w/o locations. -->
-<td> <% unless track.location.nil? %>
-	<%= link_to "Listen", track.location, :target=>"_blank"%>
-	<% end %>
-	</td>
 <td> <%= track.rating %> </td>
 <td> <%= link_to 'Edit', edit_track_path(track), :class => 'btn btn-xs btn-default' %>
 <%= link_to 'Delete', track, method: :delete, 

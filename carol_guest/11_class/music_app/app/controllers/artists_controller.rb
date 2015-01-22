@@ -5,8 +5,11 @@ class ArtistsController < ApplicationController
 
   def create
     @artist = Artist.new(artist_params)
-    @artist.save
-    redirect_to artist_path(@artist)
+    if @artist.save
+      redirect_to artist_path(@artist)
+    else
+      render :new
+    end
   end
 
   def edit
@@ -25,7 +28,7 @@ class ArtistsController < ApplicationController
   end
 
   def index
-    @artists = Artist.all
+    @artists = Artist.search(params[:search])
   end
 
   def destroy
@@ -36,7 +39,7 @@ class ArtistsController < ApplicationController
 
   private
   def artist_params
-    params.require(:artist).permit(:name, :pic_url)
+    params.require(:artist).permit(:name, :pic_url, :record_label_id, :genre_id)
   end
 
   def get_artist
