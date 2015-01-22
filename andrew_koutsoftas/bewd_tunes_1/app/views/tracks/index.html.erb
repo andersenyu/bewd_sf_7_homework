@@ -1,0 +1,37 @@
+<div class="col-md-12">
+
+<div class="col-md-8 col-md-offset-2">
+
+<h1 style="color:#666666;">All The Tracks</h1>
+
+<div class="table-responsive">
+<table class="table table-str
+iped table-hover">
+
+<%= link_to "Add New Track", new_track_path, :class => 'btn btn-default' %>
+
+  <tr class="small">
+    <th> Track Title </th>
+    <th> Artist </th>
+    <th> Actions </th>
+  </tr>
+
+<% @tracks.each do |track| %>
+  <tr class="small">
+    <td> <%= track.title %> </td>
+    <td> <%= track.artist.name %> </td>
+    <td> <%= link_to "Show", track_path(track), :class => 'btn btn-warning'  %> 
+    <%= link_to "Edit", edit_track_path(track), :class => 'btn btn-default'%>
+    <%= link_to 'Delete', track, method: :delete, data: {confirm: 'Are you sure?'}, :class => 'btn btn-danger' %>
+    </td>
+  </tr>
+
+<% end %>  
+
+</table>
+
+
+</div>
+
+</div>
+</div>

@@ -1,0 +1,8 @@
+<div class="col-md-12">
+
+<div class="col-md-8">
+<h1><%=@artist.name %> </h1>
+<h1>Record Label: <%= @artist.record_label.try(:name) %></h1>
+<%=image_tag(@artist.profile_image)%> 
+</div>
+</div>
