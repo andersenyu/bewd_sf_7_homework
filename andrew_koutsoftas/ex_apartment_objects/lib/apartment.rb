@@ -16,7 +16,7 @@ class Apartment
 	end
 
   	def to_s
-    	"Apartment: #{@name} \n sqft: #{@sqft} \t Bedrooms: #{@num_bedrooms} \t Bathrooms: #{@num_bathrooms}"
+    	"Apartment: #{@name} \n sqft: #{@apt_sqft} \t Bedrooms: #{@apt_bedrooms} \t Bathrooms: #{@apt_bathrooms}"
   	end
 	
 	#initialize
