@@ -1,0 +1,6 @@
+<%= simple_form_for(@genre, html:  {:class => 'form-horizontal'}) do |f| %>
+  <%= f.input :name, label: false, input_html: {:class => 'form-control', placeholder: 'Name' } %>
+  <div style="text-align:center;">
+    <%= f.submit "Submit".html_safe, :class => 'btn btn-md btn-default' %>
+  </div>
+<% end %>
