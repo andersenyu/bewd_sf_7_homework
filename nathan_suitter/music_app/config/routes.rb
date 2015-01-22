@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'genres/index'
+
+  get 'genres/show'
+
+  get 'genres/new'
+
+  get 'genres/edit'
+
   resources :artists, :tracks, :record_labels
   root 'static_pages#home'
 

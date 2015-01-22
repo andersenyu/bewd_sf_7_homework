@@ -13,8 +13,11 @@ class ArtistsController < ApplicationController
 
   def create 
     @artist = Artist.new(artists_params)
-    @artist.save #active record_method
-    redirect_to artist_path(@artist)
+    if @artist.save #active record_method
+      redirect_to artist_path(@artist)
+    else
+      render :new
+    end
   end
 
   def edit
