@@ -13,7 +13,7 @@ class RecordLabelsController < ApplicationController
     @record_label = get_record_label
     @record_label.update_attributes(record_params)
     @record_label.save
-    redirect_to record_label_path(@record_label)
+    redirect_to record_labels_path(@record_label)
   end 
 
   def edit
@@ -31,7 +31,7 @@ class RecordLabelsController < ApplicationController
   def destroy
     @record_label = get_record_label
     @record_label.destroy
-    redirect_to record_label_path
+    redirect_to record_labels_path
   end
 
   private

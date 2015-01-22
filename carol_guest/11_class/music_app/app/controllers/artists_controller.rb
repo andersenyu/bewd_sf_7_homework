@@ -28,7 +28,7 @@ class ArtistsController < ApplicationController
   end
 
   def index
-    @artists = Artist.all
+    @artists = Artist.search(params[:search])
   end
 
   def destroy

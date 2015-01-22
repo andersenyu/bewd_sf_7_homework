@@ -5,8 +5,8 @@
 <h1><%=@artist.name%> <%= link_to "Edit", edit_artist_path(@artist), :class => 'btn btn-lg btn-default' %>
 <%= link_to "Back to artists", artists_path, :class => 'btn btn-lg btn-primary' %>
 </h1>
-<p><%= @artist.record_label.try(:name) %></p>
-<p><%= @artist.genre.try(:name) %></p>
+<p><%= @artist.record_label.try(:name) %>
+<%= @artist.genre.try(:name) %></p>
 
 <%= image_tag(@artist.pic_url) %>
 
