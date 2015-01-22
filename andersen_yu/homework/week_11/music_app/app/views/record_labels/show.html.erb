@@ -4,7 +4,7 @@
 <table>
 <% @record_label.artists.each do |artist| %>
 	<tr>
-		<td style="color: #2980b9; padding-right: 25px; font-size: 20px;"><%= artist.name %></td>
+		<td style="color: #2980b9; padding-right: 25px; font-size: 20px;"><%= link_to "#{artist.name}", artist_path(artist) %></td>
 		<td style="color: #2980b9; padding-right: 25px; font-size: 20px;"><%= image_tag(artist.pic_url) %></td>
 		<td style="color: #2980b9; padding-right: 25px; font-size: 20px;"><%= @record_label.name %></td>
 	</tr>

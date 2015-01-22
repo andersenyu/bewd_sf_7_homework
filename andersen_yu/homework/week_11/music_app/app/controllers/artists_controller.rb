@@ -4,13 +4,16 @@ class ArtistsController < ApplicationController
   end
 
   def index
-    @artists = Artist.all
+    @artists = Artist.search(params[:search])
   end
 
   def create
   	@artist = Artist.new(artist_params)
-  	@artist.save
-  	redirect_to artist_path(@artist)
+  	if @artist.save
+      redirect_to artist_path(@artist)
+    else
+      render :new
+   end
   end
 
   def show
@@ -31,7 +34,7 @@ class ArtistsController < ApplicationController
   def destroy
     @artist = get_artist
     @artist.destroy
-    redirect_to artists_path(@artist)
+    redirect_to tracks_path(@artist)
   end
 
 

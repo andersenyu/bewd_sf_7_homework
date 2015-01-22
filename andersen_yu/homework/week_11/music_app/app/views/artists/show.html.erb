@@ -1,6 +1,6 @@
 <div class="col-md-12">
 <div class="col-md-8">
-	<h1><%= @artist.name %> <%= "@" unless @artist.record_label.try(:name).nil? %> <%= @artist.record_label.try(:name) %></h1>
+	<h1><%= @artist.name %> <%= "@" unless @artist.record_label.try(:name).nil? %> <%= link_to "#{@artist.record_label.try(:name)}", record_label_path(@artist.record_label) %></h1>
 	<%= image_tag(@artist.pic_url) %>
 	<br>
 <tr>
@@ -11,6 +11,14 @@
 		<%= render 'artists/actions_tab' %>
 	</td>
 </tr>
-	
 </div>
 </div>
+<table>
+<% @artist.tracks.each do |track| %>
+	<tr>
+		<td style="color: #2980b9; padding-right: 25px; font-size: 20px;"><%= track.title %></td>
+		<td style="color: #2980b9; padding-right: 25px; font-size: 20px;"><%= link_to "Song", track.track_link %></td>
+	</tr>
+	<br>
+<% end %>
+</table>

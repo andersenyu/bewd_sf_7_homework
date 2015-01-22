@@ -1,4 +1,11 @@
 <div class="col-md-12">
+<br>
+<%= form_tag artists_path, :method => 'get', :style => 'text-align:right', :class => 'form-inline' do %>
+<p>
+<%= text_field_tag :search, params[:search], :class => 'form-control', placeholder: "Artist Name" %>
+<%= submit_tag "Search", :name => nil, :class => 'btn btn-md btn-default' %>
+</p>
+<% end %>
 <h1 style="color: #666666; text-align:center;">Artists Index Page</h1>
 <div class="table-responsive">
 

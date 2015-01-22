@@ -1,13 +1,23 @@
 Rails.application.routes.draw do
 
+  get 'genres/index'
+
+  get 'genres/new'
+
+  get 'genres/show'
+
+  get 'genres/update'
+
+  get 'genres/edit'
 
 #when referring to controller always pluralize
 
   root "static_pages#home"
   get "static_pages/about"
 
-  resources :record_labels, only: [:show, :index]
+  resources :record_labels
   resources :artists
+  resources :tracks
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
