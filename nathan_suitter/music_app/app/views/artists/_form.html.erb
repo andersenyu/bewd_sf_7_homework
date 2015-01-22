@@ -3,8 +3,10 @@
   <br/>
   <%= f.input :pic_url, label: false, input_html: {:class => 'form-control', placeholder: 'Profile Image' } %>
   <br/>
-  <%= f.association :record_label, label: false, :include_blank => '-- Select One --', input_html: {:class => 'form-control' } %>
+  <%= f.association :record_label, label: false, :include_blank => '-- Record Label --', input_html: {:class => 'form-control' } %>
   <div style="text-align:center;">
+  <br/>
+  <%= f.association :genre, label: false, :include_blank => '-- Genre --', input_html: {:class => 'form-control' } %> 
     <%= f.submit "Submit".html_safe, :class => 'btn btn-md btn-default' %>
   </div>
 <% end %>

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :artists, :tracks, :record_labels
+  resources :artists, :tracks, :record_labels, :genres
   root 'static_pages#home'
 
   # The priority is based upon order of creation: first created -> highest priority.
