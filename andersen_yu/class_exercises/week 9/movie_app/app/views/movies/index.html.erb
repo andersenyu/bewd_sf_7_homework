@@ -1,9 +1,0 @@
-<center>
-	<h1>The Movie App Index</h1>
-
-	<% @movies.each do |movie|%>
-	<li style="color:#cc3333;"> 
-		<%= link_to "#{movie.title}", movie_path(movie) %> 
-	</li>
-	<% end %>
-</center>
