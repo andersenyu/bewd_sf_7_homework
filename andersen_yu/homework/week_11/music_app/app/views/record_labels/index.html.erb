@@ -1,0 +1,9 @@
+<center>
+<p style="color: #34495e; font-size: 40px;">Record Labels</p>
+
+<table>
+<% @record_labels.each do |record_label| %>
+	<td><div style="color: #2980b9; padding-right: 25px; font-size: 20px; text-decoration: none;"><%= link_to record_label.name, record_label_path(record_label.id) %></div></td>
+<% end %>
+</table>
+</center>

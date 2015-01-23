@@ -1,0 +1,15 @@
+<center>
+	<h1>How did you do?</h1>
+	<br>
+	<p>
+		<%= image_tag(@user_image) %> vs <%= image_tag(@comp_image) %>
+	</p>
+	<p>
+		<%= @user_throw %>   vs   <%= @game_throw %>
+	</p>
+	<br>
+		<%= @results %>
+	<br>
+	<br>
+		<%= link_to "Play Again", new_rock_paper_scissor_path %>
+</center>

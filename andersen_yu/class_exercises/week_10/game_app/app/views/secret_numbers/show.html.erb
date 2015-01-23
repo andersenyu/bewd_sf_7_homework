@@ -1,0 +1,8 @@
+<h1>What's the Lucky Num</h1>
+<% if @chosen_number == @secret_number %>
+	<h1> Congrats! </h1>
+	<h2> The secret number was in fact <%= @chosen_number %>
+<% else %>
+	<h1> You were WRONG </h1>
+	<h2> <%= @chosen_number %> was not the right number! The Secret Number was <%= @secret_number %>
+<% end %>

@@ -1,0 +1,38 @@
+<<div class="col-md-12">
+
+<h1 style="color:#955251">All Tracks</h1>
+
+<div class="col-md-10">
+<div class="table-responsive">
+
+<table class="table table-hover">
+
+<tr class = "small">
+<th>Name</th>
+<th>Artist</th>
+<th>Rating</th>
+<th>Actions</th>
+</tr>
+
+
+<% @tracks.each do |track| %>
+<tr class = "small">
+<td> <%= link_to "#{track.name}", track.location, :target=>"_blank" unless track.location.nil?%> </td>
+<td> <%= track.artist.name if track.artist%> </td>
+<td> <%= track.rating %> </td>
+<td> <%= link_to 'Edit', edit_track_path(track), :class => 'btn btn-xs btn-default' %>
+<%= link_to 'Delete', track, method: :delete, 
+data: {confirm: 'Are you sure?'}, :class => 'btn btn-xs btn-danger' %></td>
+</tr>
+
+
+<%end %>
+
+</table>
+
+</div>
+
+<%= link_to 'Add Track', new_track_path, :class => 'btn btn-lg btn-primary' %>
+</div>
+
+</div>

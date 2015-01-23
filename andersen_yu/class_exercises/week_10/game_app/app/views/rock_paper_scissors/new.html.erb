@@ -1,0 +1,35 @@
+
+<%= link_to "Back to games", root_path %>
+<center><h1>Welcome to the Rock Paper Scissor Game</h1>
+<%= image_tag("http://sd.keepcalm-o-matic.co.uk/i/keep-calm-and-welcome-to-my-game.png", width: 200, height: 250) %>
+<br>
+<h4>Choose your weapon</h4>
+<table>
+	<tr>
+		<th>
+			<%= link_to image_tag("http://www.clker.com/cliparts/p/G/a/s/t/g/rock-th.png"), rock_paper_scissor_path(@rock_num) %>
+		</th>
+		<th>
+			<%= link_to image_tag("http://www.clker.com/cliparts/Y/t/o/V/q/F/paper-th.png"), rock_paper_scissor_path(@paper_num) %>
+		</th>
+		<th>
+			<%= link_to image_tag("http://www.clker.com/cliparts/8/B/i/M/Y/Z/scissors-th.png"), rock_paper_scissor_path(@scissors_num) %>
+		</th>
+	</tr>
+
+	<tr>
+		<th>
+			<%= link_to "Rock", rock_paper_scissor_path(0) %>
+		</th>
+		<th>
+			<%= link_to "Paper", rock_paper_scissor_path(1) %>
+		</th>
+		<th>
+			<%= link_to "Scissor", rock_paper_scissor_path(2) %>
+		</th>
+	</tr>
+
+
+
+</table>
+</center>

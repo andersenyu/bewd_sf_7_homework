@@ -1,0 +1,33 @@
+<div class="col-md-12">
+
+<h1 style="color:#955251">Record Labels</h1>
+
+<div class="col-md-10">
+<div class="table-responsive">
+
+<table class="table table-hover">
+
+<tr class = "small">
+<th>Name</th>
+</tr>
+
+
+<% @record_labels.each do |label| %>
+<tr class = "small">
+<td> <%= label.name %> </td>
+<td> <%= link_to 'Edit', edit_record_label_path(label), :class => 'btn btn-xs btn-default' %>
+<%= link_to 'Delete', label, method: :delete, 
+data: {confirm: 'Are you sure?'}, :class => 'btn btn-xs btn-danger' %></td>
+</tr>
+
+
+<%end %>
+
+</table>
+</div>
+
+<%= link_to 'Add Record Label', new_record_label_path, :class => 'btn btn-lg btn-primary' %>
+
+</div>
+
+</div>

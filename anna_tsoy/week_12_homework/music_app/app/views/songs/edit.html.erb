@@ -1,0 +1,15 @@
+<h2> Edit Song </h2>
+	<%= form_for :song, url: artist_song_path, method: :patch do |f| %>
+		<p>
+			<%= f.label :name %><br>
+			<%= f.text_field :name %><br>
+		</p>
+		<p>
+			<%= f.submit %>
+		</p>
+	<% end %>
+
+<%= link_to "Index", artists_path  %>
+<%= link_to "back", artist_path(@artist) %>
+
+

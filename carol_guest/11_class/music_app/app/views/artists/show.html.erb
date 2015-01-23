@@ -1,0 +1,48 @@
+<div class = "col-md-12">
+
+<div class= "col-md-8">
+
+<h1><%=@artist.name%> <%= link_to "Edit", edit_artist_path(@artist), :class => 'btn btn-lg btn-default' %>
+<%= link_to "Back to artists", artists_path, :class => 'btn btn-lg btn-primary' %>
+</h1>
+<p><%= @artist.record_label.try(:name) %>
+<%= @artist.genre.try(:name) %></p>
+
+<%= image_tag(@artist.pic_url) %>
+
+
+
+<h3 style="color:#955251">Tracks</h3>
+
+<div class="col-md-10">
+<div class="table-responsive">
+
+<table class="table table-hover">
+
+<tr class = "small">
+<th>Name</th>
+<th>Artist</th>
+<th>Rating</th>
+<th>Actions</th>
+</tr>
+
+
+<% @artist.tracks.each do |track| %>
+<tr class = "small">
+<td> <%= link_to "#{track.name}", track.location, :target=>"_blank" unless track.location.nil?%> </td>
+<td> <%= track.artist.name if track.artist%> </td>
+<!-- I couldn't figure out how to get it to hide links for tracks w/o locations. -->
+<td> <%= track.rating %> </td>
+<td> <%= link_to 'Edit', edit_track_path(track), :class => 'btn btn-xs btn-default' %>
+<%= link_to 'Delete', track, method: :delete, 
+data: {confirm: 'Are you sure?'}, :class => 'btn btn-xs btn-danger' %></td>
+</tr>
+
+
+<%end %>
+
+</table>
+
+
+</div>
+</div>

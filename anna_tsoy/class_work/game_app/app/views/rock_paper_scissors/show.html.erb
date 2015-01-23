@@ -1,0 +1,15 @@
+<h1>RockPaperScissors#show</h1>
+
+<h1> *******</h1>
+<h2>you chose <%= @player_selection %> </h2>
+<h2>computer chose <%= @comp_selection %> </h2>
+
+<% if @status == :win %>
+	<h1> you win </h1>
+<% elsif @status == :tie%>
+	<h1> its a tie</h1>
+<% else %>
+	<h1> you lose </h1>
+<% end %>
+
+<p>Find me in app/views/rock_paper_scissors/show.html.erb</p>

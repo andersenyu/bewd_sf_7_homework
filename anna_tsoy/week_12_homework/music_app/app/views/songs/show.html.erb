@@ -1,0 +1,22 @@
+<table>
+	<tr>
+		<th>Song Name</th>
+	</tr>
+
+	<tr>
+		<td>
+			<%= @song.name %>
+		</td>
+	</tr>
+	<tr>
+		<th>	
+			<%= link_to "Index", artists_path %>
+			</th>
+		<th>
+			<%= link_to "Edit", edit_artist_song_path(@song.artist, @song) %>
+		</th>
+		<th>
+			<%= link_to "Back to artist", artist_path(@song.artist) %>
+		</th>
+	</tr>
+</table>

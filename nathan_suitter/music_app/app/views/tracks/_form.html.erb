@@ -1,0 +1,10 @@
+<%= simple_form_for(@track, html:  {:class => 'form-horizontal'}) do |f| %>
+  <%= f.input :title, label: false, input_html: {:class => 'form-control', placeholder: 'Name' } %>
+  <br/>
+  <%= f.input :length, label: false, input_html: {:class => 'form-control', placeholder: 'Track Length' } %>
+  <br/>
+  <%= f.association :artist, label: false, :include_blank => '-- Select One --', input_html: {:class => 'form-control' } %>
+  <div style="text-align:center;">
+    <%= f.submit "Submit".html_safe, :class => 'btn btn-md btn-default' %>
+  </div>
+<% end %>

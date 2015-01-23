@@ -1,0 +1,37 @@
+<div class="col-md-12">
+
+<div class="col-md-8 col-md-offset-2">
+
+<h1 style="color:#666666;">Artist Index Page</h1>
+
+<div class="table-responsive">
+<table class="table table-str
+iped table-hover">
+
+<%= link_to "Add New Artist", new_artist_path, :class => 'btn btn-default' %>
+
+  <tr class="small">
+    <th> Name </th>
+    <th> Artist Image </th>
+    <th> Actions </th>
+  </tr>
+
+<% @artists.each do |artist| %>
+  <tr class="small">
+    <td> <%= artist.name %> </td>
+    <td> <%= image_tag(artist.profile_image, size:'200x200') unless artist.profile_image.nil?%> </td>
+    <td> <%= link_to "Show", artist_path(artist), :class => 'btn btn-warning'  %> 
+    <%= link_to "Edit", edit_artist_path(artist), :class => 'btn btn-default'%>
+    <%= link_to 'Delete', artist, method: :delete, data: {confirm: 'Are you sure?'}, :class => 'btn btn-danger' %>
+    </td>
+  </tr>
+
+<% end %>  
+
+</table>
+
+
+</div>
+
+</div>
+</div>

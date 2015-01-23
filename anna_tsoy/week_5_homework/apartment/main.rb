@@ -56,7 +56,7 @@ def create_building
   puts "What is the building's address?"
   building_address = gets.strip
 
-  Building.new(building_name, building_address, apartments)
+  Building.new(building_name, building_address)
 end
 
 # Now call methods to run the program
@@ -83,7 +83,7 @@ apt_count = gets.to_i
 
     puts "How much is this unit rented for?"
     rent = gets.to_i
-    apartment.rent = rent
+    apartment.rent = rent 
   end
 end
 

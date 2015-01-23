@@ -7,19 +7,20 @@ def new_count bottles
 	end
  	puts "1 bottle left!"
  	puts "take one down, pass it around!"
+ 	puts "no more bottles left"
 end
 
-def whiskey_count whiskey
-	while whiskey > 2
-		whiskey = whiskey - 1
-		puts whiskey.to_s + " bottles of whiskey on the wall!"
-		puts whiskey.to_s + " bottles of whiskey!"
-		puts "take one down, pass it around!"
-	end
-	puts "1 bottle of beer on the wall!"
-	puts "& now you are pissed!"
-end
+# def whiskey_count whiskey
+# 	while whiskey > 2
+# 		whiskey = whiskey - 1
+# 		puts whiskey.to_s + " bottles of whiskey on the wall!"
+# 		puts whiskey.to_s + " bottles of whiskey!"
+# 		puts "take one down, pass it around!"
+# 	end
+# 	puts "1 bottle of beer on the wall!"
+# 	puts "& now you are pissed!"
+# end
 
 
 new_count 100
-whiskey_count 100
+#whiskey_count 100
