@@ -1,8 +1,31 @@
-<div style="text-align: center;" class="jumbotron" id="welcomepage">
-	<h1 style="text-align: center;">Welcome to TMZ-Tunes</h1>
-  		<br>
-  			<p>Want to know what your favorite celebrities been up to? Look no further! TMZ-Tunes has the largest collection of juicy celebrity gossip</p>
-  		<br>
-  	<p>All YOU need to do is search!</p>
-  	<p><%= link_to "Sign In", new_user_session_path, :class => 'btn btn-lrg btn-success' %></p>
+<!-- Warming Up -->
+<%= javascript_include_tag 'welcomepage' %>
+
+<link href='http://fonts.googleapis.com/css?family=Buenard:700' rel='stylesheet' type='text/css'>
+
+
+<!--Video Section-->
+<section class="content-section video-section">
+  <div class="pattern-overlay">
+  <a id="bgndVideo" class="player" data-property="{videoURL:'http://youtu.be/TJ1SDXbij8Y',containment:'.video-section', quality:'large', autoPlay:true, mute:true, opacity:.8, startAt:0, stopMovieOnBlur: false}">bg</a>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+        <h1>What Can I Buy With?</h1>
+        <!-- <h3><%= link_to "Sign In", new_user_session_path, :class => 'btn btn-lrg btn-success' %></h3>  
+        <h3><%= link_to "Sign out", destroy_user_session_path, :method => :delete, :class => 'btn btn-lrg btn-danger' %></h3> -->
+	   </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--Video Section Ends Here-->
+<div>
+   <button onclick="$('#bgndVideo').toggleVolume()" id="volumebutton" class="btn btn-info btn-xs" type="button">
+    <!-- <i class="glyphicon glyphicon-volume-off" aria-hidden="true"></i> -->Mute
+  </button>
  </div>
+
+
+<script src="http://pupunzi.com/mb.components/mb.YTPlayer/demo/inc/jquery.mb.YTPlayer.js"></script>
+

@@ -7,3 +7,60 @@
 	background-size: cover;
 	height: 90%;
 }
+
+#volumebutton {
+	position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+#question{
+	margin: 200px auto 0px;
+}
+
+// '.' is for a class and # is for an id
+
+.video-section {
+	position: absolute;
+	left: 0px;
+	right: 0px;
+	top: 0px;
+	bottom: 0px;
+}
+
+.video-section .pattern-overlay {
+background-color: rgba(71, 71, 71, 0.59); 
+position: absolute;
+left: 0px;
+right: 0px;
+top: 0px;
+bottom: 0px;
+/* Incase of overlay problems just increase the min-height*/
+}
+.video-section h1, .video-section h3{
+text-align:center;
+color:#fff;
+}
+.video-section h1{
+font-size:75px;
+font-family: 'Buenard', serif;
+font-weight:bold;
+text-transform: uppercase;
+margin: 250px auto 0px;
+text-shadow: 1px 1px 1px #000;
+-webkit-text-shadow: 1px 1px 1px #000;
+-moz-text-shadow: 1px 1px 1px #000;
+}
+.video-section h2{
+font-size: 40px;
+font-weight:lighter;
+margin-left: auto;
+margin-right: auto;
+}
+.video-section h3{
+font-size: 25px;
+font-weight:lighter;
+margin: 0px auto 15px;
+}
+.video-section .buttonBar{display:none;}
+.player {font-size: 1px;}
