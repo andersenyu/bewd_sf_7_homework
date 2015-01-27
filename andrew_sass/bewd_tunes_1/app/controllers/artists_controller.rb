@@ -5,8 +5,11 @@ class ArtistsController < ApplicationController
 
   def create
   	@artist = Artist.new(artist_params)
-  	@artist.save
+  	if @artist.save
   	redirect_to artist_path(@artist)
+  else
+    render :new
+  end
   end
 
   def index
@@ -18,6 +21,16 @@ class ArtistsController < ApplicationController
   end
 
   def edit
+    @artist = get_artist
+  end
+
+  def update
+    @artist = get_artist
+    if @artist.update(artist_params)
+      redirect_to artists_path(@artist)
+  else 
+    render :edit
+  end
   end
 
   def destroy

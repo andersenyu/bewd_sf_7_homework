@@ -13,11 +13,13 @@
 
 <% @record_labels.each do |record| %>
 
+<!-- Code in the loop below MUST match the word within the two long lines after 'do' above -->
+
 	<tr class="small">
-		<td> <%= record_label.name %> </td>
+		<td> <%= record.name %> </td>
 		<td>
-			<%= link_to "#{record_label.name}", record_label_path(record_label), :class => 'btn btn-xs btn-danger'  %> 
-			<%= link_to 'Delete', record_label, method: :delete, data: {confirm: 'Are you sure?'}, :class => 'btn btn-xs btn-warning' %>
+			<%= link_to "#{record.name}", record_label_path(record), :class => 'btn btn-xs btn-danger'  %> 
+			<%= link_to 'Delete', record, method: :delete, data: {confirm: 'Are you sure?'}, :class => 'btn btn-xs btn-warning' %>
 			
 		</td>	
 	</tr>
