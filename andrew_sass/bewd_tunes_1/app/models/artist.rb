@@ -12,4 +12,5 @@
 
 class Artist < ActiveRecord::Base
 	belongs_to :record_label
+	validates_presence_of :record_label, :name
 end
