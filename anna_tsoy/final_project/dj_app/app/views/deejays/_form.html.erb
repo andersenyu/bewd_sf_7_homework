@@ -1,0 +1,25 @@
+<%= simple_form_for(@deejay, html: {:class => 'form-horizontal', :multipart => true}) do |f| %>
+
+	<%= f.input :name, label: false, input_html: {:class => 'form-control', placeholder: 'Name'} %>
+	<br/>
+
+	<%= f.input :description, label: false, input_html: {:class => 'form-control', placeholder: 'Description'} %>
+	<br/>
+
+	<%= f.input :twitter, label: false, input_html: {:class => 'form-control', placeholder: 'Twitter Handle'} %>
+	<br/>
+
+	<%= f.input :email, label: false, input_html: {:class => 'form-control', placeholder: 'Email Address'} %>
+	<br/>
+
+	<%= f.input :soundcloud, label: false, input_html: {:class => 'form-control', placeholder: 'SoundCloud'} %>
+	<br/>
+
+	<%= f.file_field :avatar %>
+	<%= f.label :remote_avatar_url, "Upload Avatar" %>
+	<br />
+
+		<div style = "text-align: center">
+			<%= f.submit "Submit".html_safe, :class => 'btn btn-lg btn-default' %>
+		</div>
+<%end %>

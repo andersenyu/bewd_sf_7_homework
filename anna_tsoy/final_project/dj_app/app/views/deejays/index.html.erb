@@ -1,0 +1,35 @@
+<div class = "col-md-12">
+	<%= link_to "Register New DJ", new_deejay_path %>
+
+	<h1>Deejays#index</h1>
+	<% @deejays.each do |deejay| %>
+		<div class = "row">
+			<div class="col-sm-6 col-md-4">
+				<div class = "thumbnail">
+
+					<%= image_tag deejay.avatar_url if deejay.avatar %>
+					<div class="caption">
+						<h3><%= deejay.name %></h3>
+						<p><a href="<%= edit_deejay_path(deejay) %>" class="btn btn-primary" role="button">Edit</a> <a href="<%= deejay_path(deejay) %>" class="btn btn-default" role="button">More</a></p>
+					</div>
+
+					<div class="caption">
+						<%= deejay.description %>
+					</div>
+
+					<div class="caption">
+						<%= deejay.twitter %>
+					</div>
+
+					<div class="caption">
+						<%= deejay.email%>
+					</div>
+
+					<div class="caption">
+						<%= deejay.soundcloud %>
+					</div>
+				</div>
+			</div>
+		</div>
+	<% end %>
+</div>

@@ -1,0 +1,33 @@
+<div class = "col-md-12">
+	<%= link_to "Register New DJ", new_deejay_path %>
+	<%= link_to "Back to All DJ's", deejays_path %>
+	<h1>Deejays#show</h1>
+
+		<div class = "row">
+			<div class="col-sm-6 col-md-4">
+
+				<div class="caption">
+					<%= @deejay.name %>
+					<%= image_tag @deejay.avatar_url if @deejay.avatar %>
+				</div>
+
+
+
+				<div class="caption">
+					<%= @deejay.description %>
+				</div>
+
+				<div class="caption">
+					<%= @deejay.twitter %>
+				</div>
+
+				<div class="caption">
+					<%= @deejay.email%>
+				</div>
+
+				<div class="caption">
+					<%= @deejay.soundcloud %>
+				</div>
+			</div>
+		</div>
+</div>
