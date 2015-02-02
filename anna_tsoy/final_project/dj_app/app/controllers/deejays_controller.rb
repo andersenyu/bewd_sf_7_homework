@@ -13,6 +13,7 @@ class DeejaysController < ApplicationController
 
   def create
     @deejay = Deejay.new(deejay_params)
+
     if @deejay.save
       redirect_to deejays_path
     else
