@@ -5,7 +5,8 @@ class RecordLabelsController < ApplicationController
 
   def create
   	@record_label = RecordLabel.new(record_params)
-	@record_label.save
+    #what happens if the record label doesn't save?
+	  @record_label.save
     redirect_to record_labels_path(@record_label)
   end
 

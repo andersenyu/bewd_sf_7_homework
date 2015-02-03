@@ -1,5 +1,7 @@
 # Comments from Bryan #
 
-- Good basic blog app
-- Pay better attention to spacing/indentation (will make errors easier to spot).
-- Made small change on comments_controller
+- Good basic app.
+- Nice use of partials.
+- I like that your controller will render json or html
+
+- be careful when attempting to comment out html. Its pretty hard and you are better off deleting. I deleted some commented out portions in your form to make the app work.
