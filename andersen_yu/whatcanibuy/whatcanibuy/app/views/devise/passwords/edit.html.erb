@@ -1,4 +1,4 @@
-<h2>Change your password</h2>
+<!-- <h2>Change your password</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
@@ -17,3 +17,57 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+ -->
+
+<section class= "centerform">
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="col-sm-12">
+      <h1 style="text-align:center; color: white;">Change Your Password</h1>
+    </div>
+  </div>
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-3">
+    <p class="text-center" style="color: white;">Use the form below to edit your password.</p>
+      <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+      <%= f.error_notification %>
+      <%= f.input :reset_password_token, as: :hidden %>
+      <%= f.full_error :reset_password_token %>
+      <form method="post" id="passwordForm">
+        <div class="well">
+          <%= f.input :name, required: true, input_html: {:class => 'input-lg form-control', placeholder: 'Name'} %><br>
+          <%= f.input :email, required: true, input_html: {:class => 'input-lg form-control', placeholder: 'Email Address'} %><br>
+          <%= f.input :password, required: true, input_html: {:class => 'input-lg form-control', placeholder: 'Password'} %>
+            <div class="row">
+              <div class="col-sm-6">
+                <span id="8char" class="glyphicon glyphicon-remove" style="color:#FF0004;"></span> 8 Characters Long<br>
+                <span id="ucase" class="glyphicon glyphicon-remove" style="color:#FF0004;"></span> One Uppercase Letter
+              </div>
+              <div class="col-sm-6">
+                <span id="lcase" class="glyphicon glyphicon-remove" style="color:#FF0004;"></span> One Lowercase Letter<br>
+                <span id="num" class="glyphicon glyphicon-remove" style="color:#FF0004;"></span> One Number
+              </div>
+            </div>
+              <br>
+            <%= f.input :password_confirmation, required: true, input_html: {:class => 'input-lg form-control', placeholder: 'Confirm Password'} %>
+              <div class="row">
+                <div class="col-sm-6">
+                  <span id="pwmatch" class="glyphicon glyphicon-remove" style="color:#FF0004;"></span> Passwords Match
+                </div>
+                <div class="col-sm-6">
+                </div>
+              </div>
+              <br>
+                <div class="form-actions">
+                  <%= f.submit "Sign up", :class => 'btn btn-primary btn-load btn-lg' %>
+                </div>
+                 <%= render "devise/shared/links" %>
+            <% end %>
+          </div>
+           
+        </form>
+  </div><!--/col-sm-6-->
+</div><!--/row-->
+</div>
+<br>
+<br>

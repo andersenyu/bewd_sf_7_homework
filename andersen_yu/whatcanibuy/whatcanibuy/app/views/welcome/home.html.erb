@@ -7,13 +7,16 @@
 <!--Video Section-->
 <section class="content-section video-section">
   <div class="pattern-overlay">
-  <a id="bgndVideo" class="player" data-property="{videoURL:'http://youtu.be/TJ1SDXbij8Y',containment:'.video-section', quality:'large', autoPlay:true, mute:true, opacity:.8, startAt:0, stopMovieOnBlur: false}">bg</a>
+  <a id="bgndVideo" class="player" data-property="{videoURL:'http://youtu.be/l3JVvp3txhM',containment:'.video-section', quality:'large', autoPlay:true, mute:true, opacity:.8, startAt:0, stopMovieOnBlur: false, realfullscreen: true, optimizeDisplay: true}">bg</a>
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-        <h1>What Can I Buy With?</h1>
-        <!-- <h3><%= link_to "Sign In", new_user_session_path, :class => 'btn btn-lrg btn-success' %></h3>  
-        <h3><%= link_to "Sign out", destroy_user_session_path, :method => :delete, :class => 'btn btn-lrg btn-danger' %></h3> -->
+          <br>
+          <br>
+        <h1>What Can I Buy With</h1>
+        <!-- <h3><%= link_to "Sign In", new_user_session_path, :class => 'btn btn-lrg btn-success' %></h3>  --> 
+        <!-- Search Bar -->
+        <h3><a href="#search"><i class="pe-7s-search"></i>Search</a></h3>
 	   </div>
       </div>
     </div>
@@ -22,10 +25,24 @@
 <!--Video Section Ends Here-->
 <div>
    <button onclick="$('#bgndVideo').toggleVolume()" id="volumebutton" class="btn btn-info btn-xs" type="button">
-    <!-- <i class="glyphicon glyphicon-volume-off" aria-hidden="true"></i> -->Mute
+    <!-- <i class="glyphicon glyphicon-volume-off" aria-hidden="true"></i> -->Toggle Volume
   </button>
  </div>
 
+        <div class="left-inner-addon" id="search">
+          <button type="button" class="close">×</button>
+            <form>
+              <span>$</span>
+              <input type="search" value="" placeholder="$"  />
+              <!-- onblur="alertMe()" -->
+              <button type="submit" class="btn btn-primary">Search</button>
+            </form>
+        </div>
+
 
 <script src="http://pupunzi.com/mb.components/mb.YTPlayer/demo/inc/jquery.mb.YTPlayer.js"></script>
+<!-- <script> 
+  function alertMe() {
+   alert('I am out of here');
+ </script> -->
 

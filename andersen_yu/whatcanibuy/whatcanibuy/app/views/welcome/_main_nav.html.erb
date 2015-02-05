@@ -16,43 +16,52 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand navbar-brand-logo" href="https://www.facebook.com/andersenyu0716">
+              <a class="navbar-brand navbar-brand-logo">
                     <div class="logo">
                     <img src="https://scontent-b.xx.fbcdn.net/hphotos-xpf1/v/t1.0-9/10676320_10152765898688938_5504324392554771453_n.jpg?oh=975fbd5f4e5ca0f5fdf4bd82015e2aa5&oe=5561AB0B" height="60" width="60">
                     </div>
-                    <div class="brand"> Hi Andersen</div>
+                    <div class="brand welcometext" style="width: 300px;">
+
+                      <% if current_user.try(:name).nil? %>
+                        <%= link_to "Welcome to Centralie", root_path, :class => 'welcometext' %>
+                        <% else %>
+                        Hi <%= link_to current_user.name, root_path %>
+                      <% end %>
+
+                        
+                    </div>
               </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav navbar-right">
-                    <li>
+                    <!-- <li>
                         <a href="javascript:void(0);" data-toggle="search" class="hidden-xs">
                             <i class="pe-7s-search"></i>
                             <p>Search</p>
                         </a>
-                    </li>
-                    <li>
+                    </li> -->
+                    <!-- <li>
                         <a href="#">
                             <i class="pe-7s-mail">
                                 <span class="label">0</span>
                             </i>
                             <p>Messages</p>
                         </a>
-                    </li> 
+                    </li>  -->
                     <li class="dropdown">
                           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="pe-7s-user"></i>
                                 <p>Account</p>
                             </a>
                           <ul class="dropdown-menu">
-                            <li><a href="#">Log In</a></li>
-                            <li><a href="#">Sign Up</a></li>
+                            <li><%= render 'devise/shared/sign_in_out_logic' %></li>
+            
                             <li class="divider"></li>
                             <li><a href="#">Saved Items</a></li>
-                            <li><a href="#">Only Etsy</a></li>
-                            <li><a href="#">Only Amazon</a></li>
-                            <li><a href="#">Only Ebay</a></li>
+                            <li><%= link_to "Only On Etsy", catalogs_path %></li>
+                            <li><a href="#">Only On Amazon</a></li>
+                            <li><a href="#">Only On Ebay</a></li>
                              <li><a href="#">Checkout</a></li>
                           </ul>
                     </li>
@@ -62,13 +71,13 @@
                       <input type="text" value="" class="form-control" placeholder="Search...">
                  </div> 
               </form>
-              
+ 
             </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
         </nav>
-       <div class="blurred-container">
-            <div class="img-src" style="background-image: url('images/bg.jpg')"></div>
-        </div>
+<!--        <div class="blurred-container">
+            <div class="img-src"></div>
+        </div> -->
     </div><!--  end navbar -->
 
 </div> <!-- end menu-dropdown -->
@@ -80,8 +89,6 @@
 
 </body>
 
-<script src="js/jquery-1.10.2.js" type="text/javascript"></script>
-<script src="js/bootstrap.js" type="text/javascript"></script>
-  
-<script src="js/ct-navbar.js"></script>
+
+
   

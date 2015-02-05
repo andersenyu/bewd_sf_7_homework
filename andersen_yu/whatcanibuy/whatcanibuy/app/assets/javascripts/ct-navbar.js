@@ -29,7 +29,7 @@ $(document).ready(function(){
 
 $(document).scroll(function() {
    if(hasTransparent){
-        if( $(this).scrollTop() > 260 ) {
+        if( $(this).scrollTop() > 40 ) {
             if(transparent) {
                 transparent = false;
                 $('nav[role="navigation"]').removeClass('navbar-transparent');
@@ -42,7 +42,6 @@ $(document).scroll(function() {
         }
     }
 });
-
 
 
 

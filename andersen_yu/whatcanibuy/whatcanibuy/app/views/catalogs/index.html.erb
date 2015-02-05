@@ -1,0 +1,13 @@
+<body class="catalog_background">
+<div class="container-fluid move_below_nav">
+	<center>
+		<table>
+			<% @items.each do |listing| %>
+			
+				<%= image_tag(listing.small_image_url)  %>
+				<% end %>
+		
+		</table>
+	</center>
+</div>
+</body>

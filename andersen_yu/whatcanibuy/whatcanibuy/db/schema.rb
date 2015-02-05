@@ -11,7 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150122020028) do
+ActiveRecord::Schema.define(version: 20150204015519) do
+
+  create_table "etsy_items", force: true do |t|
+    t.integer  "listing_id"
+    t.text     "title"
+    t.text     "description"
+    t.integer  "price"
+    t.integer  "quantity"
+    t.text     "url"
+    t.integer  "views"
+    t.integer  "num_favorers"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.datetime "provider_update_to"
+    t.text     "big_image_url"
+    t.text     "small_image_url"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

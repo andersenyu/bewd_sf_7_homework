@@ -1,0 +1,42 @@
+<body class="login_background">
+<div class="container logincontain">
+    <div class="row">
+        <div class="col-md-12">
+
+            <div class="wrap">
+                <p class="form-title">
+                    Log In</p>
+				 <div class="login">
+                    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                   
+                <%= f.input :email, label: false, required: true, input_html: {:class => 'input-lg form-control', placeholder: 'Email', type: 'text'} %>
+                <%= f.input :password, label: false, required: true, input_html: {:class => 'input-lg form-control', placeholder: 'Password', type: 'password'} %>
+                
+                <div class="form-actions">
+		    			<%= f.button :submit, "Start Shopping", :class => 'col-xs-12 btn btn-primary btn-load btn-lg', :type => 'submit'%>
+		    			
+				</div>
+                <div class="remember-forgot">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="checkbox">
+                                <label>
+                                    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-8 forgot-pass-content">
+                            <%= render "devise/shared/links" %>
+
+                        </div>
+                    </div>
+                </div>
+                
+                </div>
+                <% end %>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="posted-by">Posted By: <a href="http://www.jquery2dotnet.com">Bhaumik Patel</a></div> -->
+</div>
+</body>

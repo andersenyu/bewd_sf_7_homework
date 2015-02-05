@@ -1,6 +1,17 @@
 @import "bootstrap"; 
 @import "bootstrap-sprockets";
 
+.move_below_nav {
+    margin-top: 150px;
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+
 #welcomepage {
 	border-radius: 0;
 	background: url('http://www.psdgraphics.com/file/colorful-triangles-background.jpg') no-repeat center center;
@@ -14,9 +25,59 @@
     right: 0;
 }
 
-#question{
+#question {
 	margin: 200px auto 0px;
 }
+
+.centerform {
+    background-color: #2c3e50;
+    padding-top: 100px;
+}
+
+.welcometext {
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 20px;
+    margin-left: 0px;
+    margin-top: 40px;
+    text-decoration: none !important;
+
+    &:hover {
+        color: #FFFFFF;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 20px;
+        margin-left: 0px;
+        margin-top: 40px;
+    }
+}
+.logincontain {
+    width: 50%;
+    height: 70%;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+.notice_alert {
+    position: absolute;
+}
+
+.navbar-toggle {
+    position: relative;
+    float: right;
+    padding: 9px 10px;
+    margin-top: 43px;
+    margin-right: 15px;
+    margin-bottom: 8px;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
 
 // '.' is for a class and # is for an id
 
@@ -26,6 +87,7 @@
 	right: 0px;
 	top: 0px;
 	bottom: 0px;
+    background-color: black;
 }
 
 .video-section .pattern-overlay {
@@ -37,30 +99,318 @@ top: 0px;
 bottom: 0px;
 /* Incase of overlay problems just increase the min-height*/
 }
-.video-section h1, .video-section h3{
+.video-section h1, .video-section h3, .video-section h2{
 text-align:center;
 color:#fff;
 }
+.video-section .container {
+    top: 25%;
+    width: 100%;
+    position: absolute;
+}
 .video-section h1{
+margin-top: 0;
 font-size:75px;
-font-family: 'Buenard', serif;
-font-weight:bold;
+font-weight:lighter;
 text-transform: uppercase;
-margin: 250px auto 0px;
 text-shadow: 1px 1px 1px #000;
 -webkit-text-shadow: 1px 1px 1px #000;
 -moz-text-shadow: 1px 1px 1px #000;
 }
 .video-section h2{
-font-size: 40px;
+font-size:75px;
 font-weight:lighter;
-margin-left: auto;
-margin-right: auto;
+text-transform: uppercase;
+margin: auto 0px;
+text-shadow: 1px 1px 1px #000;
+-webkit-text-shadow: 1px 1px 1px #000;
+-moz-text-shadow: 1px 1px 1px #000;
 }
 .video-section h3{
-font-size: 25px;
+font-size: 35px;
+font-weight:lighter;
+margin: 0px auto 15px;
+}
+.video-section a{
+text-decoration: none;
+color: white;
 font-weight:lighter;
 margin: 0px auto 15px;
 }
 .video-section .buttonBar{display:none;}
 .player {font-size: 1px;}
+
+#search_text {
+	text-decoration: none;
+    font-size: 40px;
+	font-weight:lighter;
+}
+
+#search {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    
+    -webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+
+    -webkit-transform: translate(0px, -100%) scale(0, 0);
+	-moz-transform: translate(0px, -100%) scale(0, 0);
+	-o-transform: translate(0px, -100%) scale(0, 0);
+	-ms-transform: translate(0px, -100%) scale(0, 0);
+	transform: translate(0px, -100%) scale(0, 0);
+    
+    opacity: 1;
+}
+
+#search.open {
+    -webkit-transform: translate(0px, 0px) scale(1, 1);
+    -moz-transform: translate(0px, 0px) scale(1, 1);
+	-o-transform: translate(0px, 0px) scale(1, 1);
+	-ms-transform: translate(0px, 0px) scale(1, 1);
+	transform: translate(0px, 0px) scale(1, 1); 
+    opacity: 1;
+}
+
+#search input[type="search"] {
+    position: absolute;
+    top: 56%;
+    width: 100%;
+    color: rgb(255, 255, 255);
+    background: rgba(0, 0, 0, 0);
+    font-size: 60px;
+    font-weight: 300;
+    text-align: center;
+    border: 0px;
+    margin: 0px auto;
+    margin-top: -51px;
+    padding-left: 30px;
+    padding-right: 30px;
+    outline: none;
+}
+#search .btn {
+    position: absolute;
+    top: 50%;
+    left: 53%;
+    margin-top: 65px;
+    margin-left: -60px;
+}
+#search .close {
+    position: fixed;
+    top: 135px;
+    right: 15px;
+    color: #fff;
+	background-color: #428bca;
+	border-color: #357ebd;
+	opacity: 1;
+	padding: 10px 17px;
+	font-size: 27px;
+}
+
+
+body
+{   
+    background-size: cover;
+    padding: 0;
+    margin: 0;
+}
+
+
+.signup_background
+{
+    background: url('http://farm3.staticflickr.com/2832/12303719364_c25cecdc28_b.jpg') fixed;
+    background-size: cover;
+    padding: 0;
+    margin: 0;
+}
+
+.password_reset_background
+{
+    background: url('https://realbalancewellness.files.wordpress.com/2014/05/two-people-forest.jpg') fixed;
+    background-size: cover;
+    padding: 0;
+    margin: 0;
+}
+
+.login_background
+{
+    background: url('http://images6.alphacoders.com/335/335921.jpg') fixed;
+    background-size: cover;
+    padding: 0;
+    margin: 0;
+}
+
+.catalog_background
+{
+    background: url('http://2.bp.blogspot.com/_0Yysp1ORcH4/TSPsI455m7I/AAAAAAAACWA/tWtKtEsEY6U/s1600/tent1.jpg') fixed;
+    background-size: cover;
+    padding: 0;
+    margin: 0;
+}
+
+
+.wrap
+{
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    position: absolute;
+    margin: auto;
+    z-index: 99;
+  
+}
+
+p.form-title
+{
+    font-family: 'Open Sans' , sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+    color: #FFFFFF;
+    margin-top: 5%;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+
+div.login input[type="text"], div.login input[type="password"]
+{
+    width: 100%;
+    margin: 0;
+    padding: 5px 10px;
+    background: 0;
+    border: 0;
+    border-bottom: 1px solid #FFFFFF;
+    outline: 0;
+    font-style: italic;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    color: #FFFFFF;
+    outline: 0;
+}
+
+div.login input[type="submit"]
+{
+    width: 100%;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-top: 16px;
+    outline: 0;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+div.login input[type="submit"]:hover
+{
+    transition: background-color 0.5s ease;
+}
+
+div.login .remember-forgot
+{
+    float: left;
+    width: 100%;
+    margin: 10px 0 0 0;
+}
+div.login .forgot-pass-content
+{
+    min-height: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+div.login label, form.login a
+{
+    font-size: 12px;
+    font-weight: 400;
+    color: #FFFFFF;
+}
+
+div.login a
+{
+    transition: color 0.5s ease;
+}
+
+div.login a:hover
+{
+    color: #2ecc71;
+}
+
+.pr-wrap
+{
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    display: none;
+}
+
+.show-pass-reset
+{
+    display: block !important;
+}
+
+.pass-reset
+{
+    margin: 0 auto;
+    width: 250px;
+    position: relative;
+    margin-top: 22%;
+    z-index: 999;
+    background: #FFFFFF;
+    padding: 20px 15px;
+}
+
+.pass-reset label
+{
+    font-size: 12px;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.pass-reset input[type="email"]
+{
+    width: 100%;
+    margin: 5px 0 0 0;
+    padding: 5px 10px;
+    background: 0;
+    border: 0;
+    border-bottom: 1px solid #000000;
+    outline: 0;
+    font-style: italic;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    color: #000000;
+    outline: 0;
+}
+
+.pass-reset input[type="submit"]
+{
+    width: 100%;
+    border: 0;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-top: 10px;
+    outline: 0;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+.pass-reset input[type="submit"]:hover
+{
+    transition: background-color 0.5s ease;
+}
+

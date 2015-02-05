@@ -1,4 +1,5 @@
-
+<!-- 
+<div id="fixed_registrations">
 <h2>Log in</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -14,3 +15,42 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>
+ -->
+<!--  -->
+<!-- <section class= "centerform">
+<div class="container-fluid">
+	<div class="row-fluid">
+	    <div class="col-sm-12">
+	      <h1 style="text-align:center; color: white;">Log In</h1>
+	    </div>
+	</div>
+		<div class="row">
+			<div class="col-sm-6 col-sm-offset-3">
+		    		<p class="text-center" style="color: white;">Log in and start shopping.</p>
+		    	<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+			    
+			    <div class="form-inputs well">
+			    <%= f.input :email, label: false, required: true, input_html: {:class => 'input-lg form-control', placeholder: 'Email'} %>
+			    <br>
+			    <%= f.input :password, label: false, required: true, input_html: {:class => 'input-lg form-control', placeholder: 'Password'} %>
+			    
+			    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+			    <br>
+					<div class="form-actions">
+		    			<%= f.button :submit, "Log in", :class => 'col-xs-12 btn btn-primary btn-load btn-lg'%>
+		    			<%= render "devise/shared/links" %>
+					</div>
+				
+				</div>
+			</div>
+		</div>
+	
+<% end %>
+
+
+
+</div>
+</section>  -->
+<%= render 'devise/sessions/log_in_form' %>
+

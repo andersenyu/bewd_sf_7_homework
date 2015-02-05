@@ -78,6 +78,9 @@ GEM
     haml (4.0.6)
       tilt
     hike (1.2.3)
+    httparty (0.13.3)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
     i18n (0.7.0)
     jbuilder (2.2.6)
       activesupport (>= 3.0.0, < 5)
@@ -92,6 +95,7 @@ GEM
     mime-types (2.4.3)
     minitest (5.5.1)
     multi_json (1.10.1)
+    multi_xml (0.5.5)
     orm_adapter (0.5.0)
     paperclip (4.2.1)
       activemodel (>= 3.0.0)
@@ -178,8 +182,10 @@ DEPENDENCIES
   devise (~> 3.4.1)
   font-awesome-sass
   haml (~> 4.0.6)
+  httparty
   jbuilder
   jquery-rails
+  json
   paperclip (~> 4.2.1)
   pry
   pry-byebug
