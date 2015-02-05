@@ -1,10 +1,8 @@
 # == Schema Information
 #
-# Table name: users
+# Table name: admins
 #
 #  id                     :integer          not null, primary key
-#  created_at             :datetime
-#  updated_at             :datetime
 #  email                  :string           default(""), not null
 #  encrypted_password     :string           default(""), not null
 #  reset_password_token   :string
@@ -15,11 +13,13 @@
 #  last_sign_in_at        :datetime
 #  current_sign_in_ip     :string
 #  last_sign_in_ip        :string
+#  created_at             :datetime
+#  updated_at             :datetime
 #
 
 require 'test_helper'
 
-class UserTest < ActiveSupport::TestCase
+class AdminTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

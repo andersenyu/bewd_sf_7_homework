@@ -1,4 +1,4 @@
-class ClientsController < ApplicationController
+class ClientsController < ApplicationController 
   def index
   	@clients = Client.all
   end
@@ -17,6 +17,7 @@ class ClientsController < ApplicationController
 
 def create
   	@client = Client.new(client_params)
+    @client.user_id = current_user.id 
   	if @client.save
   		redirect_to client_path(@client)
   	else
@@ -42,7 +43,7 @@ def create
 private
 
 	def client_params
-		params.require(:client).permit(:name)
+		params.require(:client).permit(:name,:user_id)
 	end
 
 	def get_client

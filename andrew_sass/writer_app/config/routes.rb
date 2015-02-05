@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+  devise_for :admins
+  devise_for :users 
   resources :posts
   resources :clients
+  resources :users do 
+    resources :clients
+  end
 
   get 'welcome/index'
 
