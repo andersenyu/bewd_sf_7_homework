@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'events/index'
+
+  get 'events/new'
+
+  get 'events/show'
+
   root "deejays#index"
 
   devise_for :deejays, controllers: {
@@ -7,6 +13,7 @@ Rails.application.routes.draw do
       }
 
   resources :deejays
+  resources :events
 
   # namespace :deejay do
   #   root :to => "devise/registrations#edit"

@@ -1,5 +1,5 @@
 class DeejaysController < ApplicationController
-  before_action :authenticate_user!, except: [:show, :index]
+  before_action :authenticate_deejay!, except: [:show, :index]
 
   def index
     @deejays = Deejay.all
