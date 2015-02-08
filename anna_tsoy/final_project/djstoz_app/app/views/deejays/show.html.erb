@@ -1,0 +1,28 @@
+<div class = "col-md-12">
+  <%= link_to "Back to All DJ's", deejays_path %>
+
+<div class = "row">
+      <div class="col-sm-6 col-md-4">
+
+        <div class="caption">
+          <%= @deejay.name %>
+          <% if deejay_signed_in? %>
+            <%= link_to "Edit Your Profile", edit_deejay_path %>
+          <% else %>
+            <p>Request form</p>
+          <%end %>
+        </div>
+
+        <div class="caption">
+          <%= @deejay.description %>
+        </div>
+
+        <div class="caption">
+          <%= @deejay.email%>
+        </div>
+
+        <div class="caption">
+          <%= @deejay.soundcloud %>
+        </div>
+      </div>
+    </div>

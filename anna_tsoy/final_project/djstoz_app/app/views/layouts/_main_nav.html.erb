@@ -1,0 +1,18 @@
+<ul class="nav nav-pills">
+  <li role="presentation" class="active">
+  <%= link_to "Index", deejays_path %>
+  </li>
+
+  <% if deejay_signed_in? %>
+  <li role="presentation" class="active">
+   <%= link_to "Log Out", destroy_deejay_session_path, :method => :delete %>
+  </li>
+  <% else %>
+  <li role="presentation" class="active">
+    <%= link_to "Register New DJ", new_deejay_registration_path %>
+  </li>
+  <li role="presentation" class="active">
+    <%= link_to "Sign In", new_deejay_session_path %>
+  </li>
+  <% end %>
+</ul>
