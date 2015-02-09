@@ -1,0 +1,2 @@
+module DeejaysHelper
+end

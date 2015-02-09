@@ -1,0 +1,11 @@
+<div class = "col-md-12">
+
+  <h1>Deejays#index</h1>
+  <% @deejays.each do |deejay| %>
+            <h3><%= deejay.name %></h3>
+            <%= deejay.description %>
+            <%= deejay.email%>
+            <%= deejay.soundcloud %>
+            <%= link_to "View DJ Info", deejay_path(deejay) %>
+  <% end %>
+</div>
