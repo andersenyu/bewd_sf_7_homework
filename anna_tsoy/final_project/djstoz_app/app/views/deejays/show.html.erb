@@ -1,35 +1,38 @@
+<dif class = "container">
+  <div class = "col-md-12">
+  <div class = "row">
+          <div class="caption">
+            <%= @deejay.name %>
+          </div>
+
+          <div class="caption">
+            <%= @deejay.description %>
+          </div>
+
+          <div class="caption">
+            <%= @deejay.email%>
+          </div>
+
+          <div class="caption">
+            <%= @deejay.soundcloud %>
+          </div>
+
 <div class = "col-md-12">
-  <%= link_to "Back to All DJ's", deejays_path %>
+ <% @deejay_events.each do |event| %>
+  <tr>
+  <td><%= event.name %></td>
+  </tr>
+ <% end %>
+</div>
 
-<div class = "row">
-      <div class="col-sm-6 col-md-4">
 
-        <div class="caption">
-          <%= @deejay.name %>
           <% if deejay_signed_in? %>
             <%= link_to "Edit Your Profile", edit_deejay_path %>
+            <%= link_to "Add Your Events",new_event_path %>
           <% else %>
-            <p>Request form</p>
-          <%end %>
+           <p>Request form</p>
+          <% end %>
         </div>
-
-        <div class="caption">
-          <%= @deejay.description %>
-        </div>
-
-        <div class="caption">
-          <%= @deejay.email%>
-        </div>
-
-        <div class="caption">
-          <%= @deejay.soundcloud %>
-        </div>
-        <%= link_to "View Events", events_path %>
-        <% if deejay_signed_in? %>
-          <%= link_to "Add Your Events",new_event_path %>
-        <% end %>
-      </div>
-    </div>
-
-</div>
+  </div>
+</dif>
 

@@ -6,7 +6,8 @@ class DeejaysController < ApplicationController
   end
 
   def show
-    @deejay = Deejay.find(params[:id])
+    @deejay = set_deejay
+    @deejay_events = @deejay.events
   end
 
   def new
@@ -43,6 +44,10 @@ class DeejaysController < ApplicationController
 
 
 private
+
+  def set_deejay
+    @deejay = Deejay.find(params[:id])
+  end
 
   def deejay_params
     params.require(:deejay).permit(:name, :description, :twitter, :email, :soundcloud, :avatar)

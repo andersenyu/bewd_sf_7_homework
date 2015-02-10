@@ -1,6 +1,9 @@
 class EventsController < ApplicationController
+  before_action :authenticate_deejay!, except: [:show, :index]
+  before_filter :set_event, only: [:show, :edit]
+
   def index
-    @events = Event.all
+      @events = Event.all
   end
 
   def new
@@ -8,7 +11,7 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = Event.new(event_params)
+    @event = current_deejay.events.create(event_params)
 
     if @event.save
       redirect_to events_path
@@ -33,6 +36,7 @@ class EventsController < ApplicationController
   end
 
   def set_event
+    @event = Event.find(params[:id])
   end
 
 end
