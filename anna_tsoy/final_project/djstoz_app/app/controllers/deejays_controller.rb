@@ -1,5 +1,6 @@
 class DeejaysController < ApplicationController
   before_action :authenticate_deejay!, except: [:show, :index]
+  before_filter :set_deejay, only: [:show, :edit]
 
   def index
     @deejays = Deejay.all
@@ -42,6 +43,11 @@ class DeejaysController < ApplicationController
     end
   end
 
+  def destroy
+    @deejay = set_deejay
+    @deejay.destroy
+    redirect_to deejays_path
+  end
 
 private
 
@@ -50,6 +56,6 @@ private
   end
 
   def deejay_params
-    params.require(:deejay).permit(:name, :description, :twitter, :email, :soundcloud, :avatar)
+    params.require(:deejay).permit(:name, :description, :twitter, :email, :soundcloud, :photo_url)
   end
 end
