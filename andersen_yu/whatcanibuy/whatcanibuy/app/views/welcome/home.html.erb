@@ -1,5 +1,5 @@
 <!-- Warming Up -->
-<%= javascript_include_tag 'welcomepage' %>
+
 
 <link href='http://fonts.googleapis.com/css?family=Buenard:700' rel='stylesheet' type='text/css'>
 
@@ -17,7 +17,28 @@
         <!-- <h3><%= link_to "Sign In", new_user_session_path, :class => 'btn btn-lrg btn-success' %></h3>  --> 
         <!-- Search Bar -->
         <h3><a href="#search"><i class="pe-7s-search"></i>Search</a></h3>
-	   </div>
+         
+
+
+<!--          <h3>
+          <div>
+            <div class="nav navbar-nav absolutely_search">   
+              <a href="javascript:void(0);" data-toggle="search" class="hidden-xs">
+                  <i class="pe-7s-search"></i>
+                    <p>Search</p>
+              </a> 
+            </div>
+
+              <form class="navbar-form navbar-search-form put_me_center" role="search" id="non-submitting-form">                  
+                <div class="form-group">
+                 <input type="text" value="" class="form-control" placeholder="What's your budget?">
+                </div> 
+              </form>
+          </div>
+        </h3> -->
+          
+
+
       </div>
     </div>
   </div>
@@ -31,16 +52,23 @@
 
         <div class="left-inner-addon" id="search">
           <button type="button" class="close">×</button>
-            <form>
-              <span>$</span>
-              <input type="search" value="" placeholder="$"  />
+            <!-- <form action='<%= "#{etsy_request_path}" %>' method="get" name="my_form" id="my_form"> -->
+
+            <form action='<%= "#{catalogs_path}" %>' method="get" name="my_form" id="my_form">
+
+              <input type="search" value="" name="price" placeholder="What's Your Budget?"  />
               <!-- onblur="alertMe()" -->
-              <button type="submit" class="btn btn-primary">Search</button>
+              <button type="submit" value="Submit" class="btn btn-primary">Search</button>
             </form>
         </div>
 
 
+
+
+
+
 <script src="http://pupunzi.com/mb.components/mb.YTPlayer/demo/inc/jquery.mb.YTPlayer.js"></script>
+<%= javascript_include_tag 'welcomepage' %>
 <!-- <script> 
   function alertMe() {
    alert('I am out of here');

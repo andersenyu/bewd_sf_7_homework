@@ -23,7 +23,9 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
    devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, password_length: 8..128
- 
+
+    validates_presence_of :name, :email
+    validates_uniqueness_of :name, :email
  # Setup accessible (or protected) attributes for your model  
   # attr_accessible :name, :email, :encrypted_password       
 

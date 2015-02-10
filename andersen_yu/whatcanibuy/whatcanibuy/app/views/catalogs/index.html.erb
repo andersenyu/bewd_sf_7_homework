@@ -1,13 +1,44 @@
+<%= javascript_include_tag 'image_hover' %>
 <body class="catalog_background">
 <div class="container-fluid move_below_nav">
+
 	<center>
-		<table>
-			<% @items.each do |listing| %>
+		<div class="container container-fluid">
 			
-				<%= image_tag(listing.small_image_url)  %>
+				<% @items.each do |listing| %>
+					<div class="col-xs-6 col-sm-4 col-md-3">   
+						<div class="cuadro_intro_hover " style="background-color:#cccccc;">
+							<div class="caption">
+								<div class="blur"></div>
+									<div class="caption-text">
+										
+											<h4 style="border-top:2px solid white; border-bottom:2px solid white; padding:10px;">
+												<span class="glyphicon glyphicon-heart-empty hover_text"></span>
+												<%= listing.num_favorers %>
+												<span class="between_spaces"></span>
+												<span class="glyphicon glyphicon-eye-open hover_text"></span>
+												<%= listing.views %>
+												<span class="between_spaces"></span>
+												<span class="glyphicon glyphicon-usd hover_text"></span><%= listing.price%> 
+											</h4>
+										<p>
+										<div class="uour-div"><%= listing.title %></div>
+						
+										<span class="glyphicon glyphicon-usd"></span><%= listing.price%> 
+										<span style="border: 1px solid rgba(0,0,0,0.1); box-shadow: inset 0 1px 0 rgba(255,255,255,0.7);" class="btn btn-default btn-xs"><%= link_to "More Info", listing.url %></span>
+										
+										
+
+										</p>
+									</div>
+							</div>	
+							<%= image_tag(listing.small_image_url)  %>	
+							
+						</div>
+					</div>
 				<% end %>
-		
-		</table>
+					
+		</div>
 	</center>
 </div>
 </body>

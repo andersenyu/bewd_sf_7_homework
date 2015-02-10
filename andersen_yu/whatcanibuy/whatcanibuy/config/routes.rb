@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   root "welcome#home"
   
   resources :catalogs, only: [:index, :show]
+
+  get '/etsy_request', to: 'catalogs#etsy_request', as: 'etsy_request'
 end

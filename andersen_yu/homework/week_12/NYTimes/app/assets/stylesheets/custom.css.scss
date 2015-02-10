@@ -1,0 +1,21 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+@import url(http://fonts.googleapis.com/css?family=Muli:300,400,400italic,300italic|Slabo+27px);
+
+
+.home_text {
+  font-size: 100px;
+}
+
+.sky_blue {
+  color: #B0C4DE;
+}
+
+.slabo_font {
+  font-family: 'Slabo 27px', serif;
+}
+
+.muli_font {
+  font-family: 'Muli', sans-serif;
+}
