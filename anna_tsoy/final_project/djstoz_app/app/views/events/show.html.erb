@@ -1,2 +1,12 @@
-<h1>Events#show</h1>
-<p>Find me in app/views/events/show.html.erb</p>
+<div class = "col-md-12">
+
+<% if @event.deejay == current_deejay %>
+  <%= link_to "back to profile", deejay_path(current_deejay) %>
+<% end %>
+
+ <% @event.each do |event| %>
+  <tr>
+  <td><%= event.name %></td>
+  </tr>
+ <% end %>
+</div> -->

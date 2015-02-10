@@ -1,12 +1,14 @@
 class DeejaysController < ApplicationController
   before_action :authenticate_deejay!, except: [:show, :index]
+  before_filter :set_deejay, only: [:show, :edit]
 
   def index
     @deejays = Deejay.all
   end
 
   def show
-    @deejay = Deejay.find(params[:id])
+    @deejay = set_deejay
+    @deejay_events = @deejay.events
   end
 
   def new
@@ -41,10 +43,19 @@ class DeejaysController < ApplicationController
     end
   end
 
+  def destroy
+    @deejay = set_deejay
+    @deejay.destroy
+    redirect_to deejays_path
+  end
 
 private
 
+  def set_deejay
+    @deejay = Deejay.find(params[:id])
+  end
+
   def deejay_params
-    params.require(:deejay).permit(:name, :description, :twitter, :email, :soundcloud, :avatar)
+    params.require(:deejay).permit(:name, :description, :twitter, :email, :soundcloud, :photo_url)
   end
 end

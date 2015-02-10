@@ -14,4 +14,7 @@
 
 class Event < ActiveRecord::Base
   belongs_to :deejay
+
+  validates_presence_of :name, :location, :date
+  validates_uniqueness_of :name
 end

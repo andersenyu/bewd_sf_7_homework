@@ -7,6 +7,7 @@
 
 
     <%= f.input :email, required: true, label: false, autofocus: true, input_html: {:class => 'form-control', placeholder: 'Email'} %>
+    <%= f.input :photo_url, required: false, label: false, autofocus: true, input_html: {:class => 'form-control', placeholder: 'Avatar'} %>
     <%= f.input :password, label: false, required: true, hint: ("#{@minimum_password_length} characters minimum" if @validatable), input_html: {:class => 'form-control', placeholder: 'Select Password'} %>
     <%= f.input :password_confirmation, label: false, required: true, input_html: {:class => 'form-control', placeholder: 'Confirm Password'} %>
     <%= f.input :name, label: false, input_html: {:class => 'form-control', placeholder: 'Name'}  %>

@@ -9,9 +9,11 @@
       </div>
     <% end %>
 
-
     <% if deejay_signed_in? %>
-    <p><a href = "<%= new_event_path %>" class = "btn btn-primary" role="button">Add Your Events</a></p>
+      <p><a href = "<%= new_event_path %>" class = "btn btn-primary" role="button">Add Your Events</a></p>
+
+      <p><a href = "<%= deejay_path(current_deejay) %>" class = "btn btn-primary" role="button" >Back to Your Profile</a>
+      </p>
     <% end %>
   </div>
 </div>

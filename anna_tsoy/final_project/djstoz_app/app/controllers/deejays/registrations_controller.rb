@@ -47,7 +47,7 @@ before_filter :configure_sign_up_params, only: [:create]
 
   # You can put the params you want to permit in the empty array.
   # def configure_account_update_params
-  #   devise_parameter_sanitizer.for(:account_update) << :attribute
+  #   devise_parameter_sanitizer.for(:account_update) << :photo_url
   # end
 
   # The path used after sign up.
