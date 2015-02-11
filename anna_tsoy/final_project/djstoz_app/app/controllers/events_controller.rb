@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   before_action :authenticate_deejay!, except: [:show, :index]
-  before_filter :set_event, only: [:show, :edit]
+  before_filter :set_event, only: [:show, :edit, :update]
 
   def index
       @events = Event.all
@@ -24,9 +24,20 @@ class EventsController < ApplicationController
   end
 
   def update
+    if @event.update(event_params)
+      redirect_to deejay_path(current_deejay)
+    else
+      render :new
+    end
   end
 
   def show
+  end
+
+  def destroy
+    @event = set_event
+    @event.destroy
+    redirect_to deejay_path(current_deejay)
   end
 
   private

@@ -1,12 +1,6 @@
 <div class = "col-md-12">
-
-<% if @event.deejay == current_deejay %>
-  <%= link_to "back to profile", deejay_path(current_deejay) %>
-<% end %>
-
- <% @event.each do |event| %>
-  <tr>
-  <td><%= event.name %></td>
-  </tr>
- <% end %>
-</div> -->
+<h3><%= @event.name %></h3>
+  <%= @event.description %>
+  <%= @event.date %>
+  <%= @event.location %>
+</div>
