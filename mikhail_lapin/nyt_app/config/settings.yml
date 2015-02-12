@@ -1,0 +1,4 @@
+host: localhost:3000
+
+nyt: 
+  api_key: 88888888
