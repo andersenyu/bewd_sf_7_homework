@@ -14,7 +14,7 @@ class EventsController < ApplicationController
     @event = current_deejay.events.create(event_params)
 
     if @event.save
-      redirect_to events_path
+      redirect_to deejay_path(current_deejay)
     else
       render :new
     end

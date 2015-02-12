@@ -4,7 +4,7 @@
   <% @deejays.each do |deejay| %>
     <td><h3><%= deejay.name %></h3></td>
     <td><%= image_tag(deejay.photo_url, size: "240x240")%></td>
-            <td><%= deejay.description %></td>
+            <td><%= deejay.name %></td>
             <%= link_to "View DJ Info", deejay_path(deejay) %>
   <% end %>
   </tr>
