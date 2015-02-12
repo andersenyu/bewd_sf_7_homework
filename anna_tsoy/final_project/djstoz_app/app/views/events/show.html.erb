@@ -1,12 +1,33 @@
-<div class = "col-md-12">
+<div class = "container-fluid">
+  <div class = "col-md-4>"></div>
 
-<% if @event.deejay == current_deejay %>
-  <%= link_to "back to profile", deejay_path(current_deejay) %>
-<% end %>
+  <div class = "col-md-4>">
 
- <% @event.each do |event| %>
-  <tr>
-  <td><%= event.name %></td>
-  </tr>
- <% end %>
-</div> -->
+    <table class = "table">
+      <thread>
+        <tr>
+          <th>Event Name</th>
+          <th>Description</th>
+          <th>Location</th>
+          <th>Date & Time</th>
+        </tr>
+      </thread>
+      <tbody>
+        <tr>
+          <th scope="row">
+            <h3><%= @event.name %></h3>
+          </th>
+          <td>
+            <%= @event.description %>
+           </td>
+           <td>
+            <%= @event.date %>
+            </td>
+            <td>
+              <%= @event.location %>
+            </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

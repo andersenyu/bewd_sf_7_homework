@@ -6,6 +6,11 @@
   <%= link_to "DJ Directory", deejays_path %>
   </li>
 
+  <li role="presentation" class="active" style="float: none; display: inline-block;">
+  <%= link_to "Events Directory", events_path %>
+  </li>
+
+
   <% if deejay_signed_in? %>
   <li role="presentation" class="active" style="float: none; display: inline-block;">
    <%= link_to "Log Out", destroy_deejay_session_path, :method => :delete %>
