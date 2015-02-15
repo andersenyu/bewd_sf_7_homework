@@ -1,0 +1,41 @@
+<div class="col-md-12">
+
+<div class="col-md-8 col-md-offset-2">
+
+<h1 style="color:#666666;">Your Record Labels</h1>
+
+<div class="table-responsive">
+<table class="table table-str
+iped table-hover">
+
+
+  <tr class="small">
+    <th> Record Labels </th>
+    <th> Artists </th>
+    <th> Actions </th>
+  </tr>
+
+<% @record_labels.each do |label| %>
+
+  <tr class="small">
+    <td> <%= label.name %> </td>
+    <td> 
+	    <% label.artists.each do |artist| %>
+			<%= artist.name %>
+			<br>
+		<% end %> 
+	</td>
+    <td>
+    <%= link_to 'Delete', label, method: :delete, data: {confirm: 'Are you sure?'}, :class => 'btn btn btn-danger' %>
+    </td>
+  </tr>
+
+<% end %>  
+
+</table>
+
+
+</div>
+
+</div>
+</div>

@@ -1,0 +1,34 @@
+<nav class="navbar">
+<div class="container-fluid">
+<ul class="nav nav-pills" style="text-align: center;">
+
+  <li role="presentation" class="active" style="float: none; display: inline-block;">
+  <%= link_to "DJ Directory", deejays_path %>
+  </li>
+
+  <li role="presentation" class="active" style="float: none; display: inline-block;">
+  <%= link_to "Events Directory", events_path %>
+  </li>
+
+
+  <% if deejay_signed_in? %>
+  <li role="presentation" class="active" style="float: none; display: inline-block;">
+   <%= link_to "Log Out", destroy_deejay_session_path, :method => :delete %>
+  </li>
+    <% if current_deejay %>
+      <li role="presentation" class="active" style="float: none; display: inline-block;">
+   <%= link_to "My Profile", deejay_path(current_deejay) %>
+  </li>
+    <% end %>
+
+  <% else %>
+  <li role="presentation" class="active" style="float: none; display: inline-block;">
+    <%= link_to "Register New DJ", new_deejay_registration_path %>
+  </li>
+  <li role="presentation" class="active" style="float: none; display: inline-block;">
+    <%= link_to "Sign In", new_deejay_session_path %>
+  </li>
+  <% end %>
+</ul>
+</div>
+</nav>

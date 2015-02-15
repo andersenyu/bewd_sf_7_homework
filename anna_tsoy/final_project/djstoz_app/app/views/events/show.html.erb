@@ -1,0 +1,33 @@
+<div class = "container-fluid">
+  <div class = "col-md-4>"></div>
+
+  <div class = "col-md-4>">
+
+    <table class = "table">
+      <thread>
+        <tr>
+          <th>Event Name</th>
+          <th>Description</th>
+          <th>Location</th>
+          <th>Date & Time</th>
+        </tr>
+      </thread>
+      <tbody>
+        <tr>
+          <th scope="row">
+            <h3><%= @event.name %></h3>
+          </th>
+          <td>
+            <%= @event.description %>
+           </td>
+           <td>
+            <%= @event.date %>
+            </td>
+            <td>
+              <%= @event.location %>
+            </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

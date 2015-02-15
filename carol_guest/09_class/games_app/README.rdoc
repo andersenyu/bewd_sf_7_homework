@@ -1,0 +1,3 @@
+Bryan's Comments
+
+I left some hints as to the logic you should attempt to decide if the user won or if the computer won. After that I think you got it.

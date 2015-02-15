@@ -1,0 +1,25 @@
+<div class="col-md-8 col-md-offset-2">
+  <h1 style="color:#666;text-align:center;">Genre Index Page</h1>
+  <div class="table-responive">
+    <div style="text-align:center;margin-bottom:10px">
+      <%= link_to "New genre", new_genre_path, :class => 'btn btn-md btn-success' %>
+    </div>
+
+    <table class="table table-striped">
+    
+    <tr class="small">
+      <th>Name</th>
+      <th colspan="3">Actions</th>
+    </tr>
+    
+    <% @genres.each do |genre| %>
+      <tr class="small">
+        <td><%= genre.name %></td>
+        <td><%= link_to "Show", genre_path(genre), :class => 'btn btn-xs warning' %></td>
+        <td><%= link_to "Edit", edit_genre_path(genre), :clase => 'btn btn-xs default' %></td>
+        <td><%= link_to "Delete", genre, method: :delete, data: {confirm: "Are you sure?"}, class: 'btn btn-xs warning' %></td>
+      </tr>
+    <% end %>
+    </table>
+  </div>
+</div>

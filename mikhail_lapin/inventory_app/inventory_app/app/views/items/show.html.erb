@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id:</strong>
+  <%= @item.id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @item.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @item.description %>
+</p>
+
+<p>
+  <strong>Container:</strong>
+  <%= @item.container_id %>
+</p>
+
+<p>
+  <strong>Checked out:</strong>
+  <%= @item.checked_out_id %>
+</p>
+
+<p>
+  <strong>User checked out:</strong>
+  <%= @item.user_checked_out %>
+</p>
+
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %>

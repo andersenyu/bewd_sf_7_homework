@@ -1,0 +1,6 @@
+<h1>Party's Over!</h1>
+<p>You threw '<strong><u><%= @user_throw %></strong></u>'</p>
+	<p>The computer threw '<strong><u><%= @game_throw %></strong></u>'</p>
+	<h2>That means: <%= @results %></h2>
+
+<%= link_to 'Play again', rock_paper_scissors_new_path %>

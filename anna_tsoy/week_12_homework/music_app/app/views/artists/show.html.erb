@@ -1,0 +1,28 @@
+<table>
+	<tr>
+		<th>Arist Name</th>
+		<th>Artist Photo</th>
+		<th>Artist Songs</th>
+		<th>Edit Song</th>
+	</tr>
+
+	<tr>
+		<td><%= @artist.name %></td>
+		<td><%= image_tag(@artist.photo, size: '150x150') %></td>
+		<td> <%= render @artist.songs %> </td>
+	</tr>
+</table>
+	<h2> Add Song </h2>
+		<%= form_for([@artist, @artist.songs.build]) do |f| %>
+		<p>
+			<%= f.label :name %><br>
+			<%= f.text_field :name %><br>
+		</p>
+		<p>
+			<%= f.submit %>
+		</p>
+		<% end %>
+	<%= link_to "Index", artists_path %>	
+	<%= link_to "Delete", artist_path(@artist), method: :delete, data: {confirm: 'Are you sure?'}, :class => 'btn btn-xs btn-danger' %>
+
+		

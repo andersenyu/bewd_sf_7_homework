@@ -1,0 +1,13 @@
+<div class="col-md-12">
+  <div class="col-md-8">
+    <h1><%= @record_label.name %></h1>
+    <div>
+      <h2>Associated Artists</h2>
+      <% @record_label.artists.each do |artist| %>
+        <div>
+          <%= link_to artist.name, artist_path(artist) %>
+        </div>
+      <% end -%>
+    </div>
+  </div>
+</div>

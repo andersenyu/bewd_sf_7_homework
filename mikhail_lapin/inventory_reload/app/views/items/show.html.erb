@@ -1,0 +1,5 @@
+<h1><%= @item.name %></h1>
+<p><%= @item.description %> </p>
+<p>Checked out? <%= @item.checked_out %> </p>
+
+<%= image_tag attachment_url(@item, :item_image) %>

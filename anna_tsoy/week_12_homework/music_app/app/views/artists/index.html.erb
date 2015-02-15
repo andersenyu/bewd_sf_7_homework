@@ -1,0 +1,21 @@
+<h1>Listing artists</h1>
+ 
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Pic</th>
+    <th>Actions</th>
+  </tr>
+
+	<% @artists.each do |artist| %>
+		<tr>
+			<td><%= artist.name %></td>
+			<td><%= image_tag(artist.photo, size: '150x150') %></td>
+			<td><%= link_to "Edit", edit_artist_path(artist) %>
+			<%= link_to "Show", artist_path(artist) %>
+			</td>
+		</tr>
+	<% end %>
+
+	<%= link_to "New Artist", new_artist_path %>
+</table>

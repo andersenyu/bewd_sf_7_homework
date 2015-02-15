@@ -1,0 +1,5 @@
+# Comments from Bryan #
+
+- Good basic blog app
+- Pay better attention to spacing/indentation (will make errors easier to spot).
+- Made small change on comments_controller

@@ -1,0 +1,12 @@
+<div class="col-md-12">
+
+<div class="col-md-8">
+
+<h1><%=@record_label.name %></h1>
+
+<p><% @record_label.artists.each do |artist| %>
+<ul><li><%= artist.name %></li></ul>
+	</p>
+<% end %>
+</div>
+</div>

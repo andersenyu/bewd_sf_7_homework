@@ -1,0 +1,65 @@
+<dif class = "container-fluid">
+  <div class = "col-md-12">
+    <div class = "row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+          <% if @deejay == current_deejay %>
+            <h3>Hello <%= current_deejay.name %>!</h3>
+          <% end %>
+      </div>
+    </div>
+
+    <div class = "row">
+      <div class = "col-md-4" style="text-align: center" >
+        <div class="caption">
+          <h2><%= @deejay.name %></h2>
+        </div>
+
+        <div class = "caption">
+        <%= image_tag(@deejay.photo_url, size: "240x240")%>
+        </div>
+      </div>
+
+      <div class= "col-md-4" sytle = "text-alight: left">
+        <div class="caption">
+          <h3>DJ Info </h3>
+        </div>
+        <div class="caption">
+          <%= @deejay.description %>
+        </div>
+
+        <div class="caption">
+          <%= @deejay.email%>
+        </div>
+
+        <div class="caption">
+          <a href="<%= @deejay.soundcloud %>">SoundCloud</a>
+        </div>
+        <% if @deejay == current_deejay %>
+          <%= link_to "Edit Your Profile", edit_deejay_path %>
+        <% end %>
+      </div>
+    </div>
+  <div class = "col-md-6" style="text-align: left" >
+    <table class="table">
+      <caption>Performances & Events</caption>
+      <% if @deejay == current_deejay %>
+              <%= link_to "Add Events", new_event_path %>
+              <%= link_to "Delete Self", deejay_path(@deejay), method: :delete, data: {confirm: 'Are you sure you want to destroy your profile?'},:class => 'btn btn-xs btn-danger' %>
+            <% end %>
+
+       <% @deejay_events.each do |event| %>
+        <tr>
+         <td><%= event.name %>
+          <%= link_to "View Details", event_path(event) %>
+           <% if @deejay == current_deejay %>
+              <%= link_to "Edit Event", edit_event_path(event) %>
+              <%= link_to "Delete Event", event_path(event), method: :delete, data: {confirm: 'Are you sure you want to delete this event?'}, :class => 'btn btn-xs btn-danger' %></td>
+            <% end %>
+       <% end %>
+      </tr>
+    </table>
+  </div>
+  </div>
+</dif>
+

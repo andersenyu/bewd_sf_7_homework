@@ -1,0 +1,6 @@
+Bryan's Comments
+
+- Overall good working app
+- Good use of bootstrap ... its even responsive !
+- Glad you got the search working too !
+- Overall good job on this one.

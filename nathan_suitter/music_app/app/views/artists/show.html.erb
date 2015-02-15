@@ -1,0 +1,14 @@
+<div class="col-md-12">
+  <div class="col-md-8">
+    <h1><%= @artist.name %> <%= "@" unless @artist.record_label.try(:name).nil?%> <%= @artist.record_label.try(:name) %></h1>
+    <%= image_tag(@artist.pic_url) %>
+    <div>
+      <h2>Tracks</h2>
+      <% @artist.tracks.each do |track| %>
+        <div>
+          <%= link_to track.title, track_path(track) %>
+        </div>
+      <% end -%>
+    </div>
+  </div>
+</div>

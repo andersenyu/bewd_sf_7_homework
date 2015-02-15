@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>InventoryReload</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+<% if current_member%>
+    <td><%= link_to "Sign out", destroy_member_session_path, :method => :delete %></td>
+ <%end%>
+    <td><%= link_to 'All Items Page', items_path, :class => 'btn btn-xs btn-danger' %></td>
+    <td><%= link_to "Member page", member_path(current_member), :class => 'btn-xs btn-danger'%></td>
+  </div>
+</nav>
+<div class= 'main'>
+
+	<%= yield %>
+</div>
+
+</body>
+</html>

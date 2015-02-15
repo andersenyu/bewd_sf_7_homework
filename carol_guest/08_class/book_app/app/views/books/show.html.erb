@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1 style="color:#cc3333">
+  <strong>Name:</strong>
+  <%= @book.name %>
+</h1>
+
+<p>
+  <%= image_tag(@book.url_image) %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @book.author %>
+</p>
+
+<p>
+  <strong>Genre:</strong>
+  <%= @book.genre %>
+</p>
+
+<p>
+  <strong>Available:</strong>
+  <%= @book.available %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @book.rating %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_book_path(@book) %> |
+<%= link_to 'List of books', books_path %>

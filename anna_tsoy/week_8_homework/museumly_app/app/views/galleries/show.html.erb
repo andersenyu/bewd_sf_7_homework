@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <h1><%= @gallery.name %></h1>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @gallery.city %>
+</p>
+
+<%= link_to 'Edit', edit_gallery_path(@gallery) %> |
+<%= link_to 'Back', galleries_path %>

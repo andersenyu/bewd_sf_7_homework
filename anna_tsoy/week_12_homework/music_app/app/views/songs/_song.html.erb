@@ -1,0 +1,11 @@
+<p>
+  <strong>Song:</strong>
+  <%= song.name %>
+</p>
+
+<p>
+	<%= link_to "Edit", edit_artist_song_path(@artist, song)  %>
+</p>
+<p>
+	<%= link_to "Delete Song", [song.artist, song], method: :delete, data: {confirm: 'Are you sure you want to delete song?'} %>
+</p>

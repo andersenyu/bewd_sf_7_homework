@@ -1,0 +1,5 @@
+<div class="col-md-12">
+  <div class="col-md-8">
+    <h1><%= @track.title%><%= ' by ' unless @track.artist.try(:name) == nil %><%=link_to @track.artist.try(:name), artist_path(@track.artist) unless @track.artist.try(:name) == nil %></h1>
+  </div>
+</div>

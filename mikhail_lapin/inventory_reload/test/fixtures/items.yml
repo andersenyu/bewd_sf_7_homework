@@ -1,0 +1,29 @@
+# == Schema Information
+#
+# Table name: items
+#
+#  id           :integer          not null, primary key
+#  name         :string
+#  description  :text
+#  container_id :integer
+#  user_id      :integer
+#  checked_out  :boolean
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  container_id: 1
+  user_id: 1
+  checked_out: false
+
+two:
+  name: MyString
+  description: MyText
+  container_id: 1
+  user_id: 1
+  checked_out: false

@@ -26,7 +26,7 @@ def get_story(index)
 	reddit_json = JSON.load(RestClient.get('http://www.reddit.com/.json'))
 	stories = reddit_json["data"]["children"]
 	title = stories[index]["data"]["title"]
-	category = stories[index]["data"]["subreddit"]
+	category = stories[injsodex]["data"]["subreddit"]
 	votes = stories[index]["data"]["ups"]
 	{title: title, category: category, votes: votes}
 end
